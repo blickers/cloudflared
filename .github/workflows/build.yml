@@ -56,7 +56,7 @@ jobs:
           sudo timedatectl set-timezone "Asia/Shanghai"
           sed -i "s|-ldflags='|-ldflags=' -s -w |g" ./Makefile
           GOOS=linux GOARCH=mipsle GOMIPS=softfloat make cloudflared
-          upx --lzma --best cloudflared
+          #upx --lzma --best cloudflared
           mkdir -p ./bin
           mv -f ./cloudflared ./bin/cloudflared
           #go clean
